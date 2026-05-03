@@ -31,8 +31,12 @@ func _physics_process(delta):
 	move_and_slide()
 
 	# 攻击优先
-	if Input.is_action_just_pressed("ui_accept") and not is_attacking:
-		play_attack()
+	if Input.is_action_just_pressed("attack") and not is_attacking:
+		play_attack("attack")
+		return
+
+	if Input.is_action_just_pressed("high_spin_attack") and not is_attacking:
+		play_attack("high_spin_attack")
 		return
 
 	# 攻击中锁定
@@ -53,8 +57,8 @@ func play_anim(name):
 		anim.play(name)
 
 
-func play_attack():
+func play_attack(attack_name):
 	is_attacking = true
-	anim.play("high_spin_attack")
+	anim.play(attack_name)
 	await anim.animation_finished
 	is_attacking = false
