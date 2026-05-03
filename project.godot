@@ -11,9 +11,8 @@ config_version=5
 [application]
 
 config/name="PrototypeZero"
-run/main_scene="uid://ccddjfeubk855"
+run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
 
 [input]
 
