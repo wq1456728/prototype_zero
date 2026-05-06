@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://j5vur6exaaa2"]
+
+[ext_resource type="Script" uid="uid://bhb0h5j1gq7ac" path="res://scripts/warrior_player.gd" id="1_warrior"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_warrior"]
+size = Vector2(34, 26)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpav4"]
+bg_color = Color(1, 0.34694347, 0.24103114, 1)
+
+[node name="WarriorPlayer" type="CharacterBody2D" unique_id=171551089]
+position = Vector2(640, 360)
+collision_mask = 0
+script = ExtResource("1_warrior")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=471177430]
+position = Vector2(0, -66)
+scale = Vector2(3, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1888591323]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_warrior")
+
+[node name="HPBar" type="ProgressBar" parent="." unique_id=1179614035]
+offset_left = -42.0
+offset_top = -124.0
+offset_right = 42.0
+offset_bottom = -114.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_tpav4")
+show_percentage = false
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=85660621]
+position = Vector2(0, -24)
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
